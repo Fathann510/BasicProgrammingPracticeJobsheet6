@@ -229,18 +229,7 @@ The job sheet gives a note: always Pull before starting work on a shared reposit
 
 ### 2.5.2 Running Results / Output Screenshot
 
-> Insert the screenshots here: the collaborator invitation, the clone of the classmate's repository, the test results in README.md, and the commit history. (To be completed - no screenshots have been provided yet.)
+[!CommitWildan](/CommitWildan.png)
 
-The test result format from the job sheet is below. The test data comes from the job sheet. The Output and Correct columns can only be filled after the program is really tested, so they are left open.
-
-text
-Test Results for Case Study 2 by <Name>
-| No | Type    | Documents | Rank/Funding | Output                                    | Correct? |
-|----|---------|-----------|--------------|-------------------------------------------|----------|
-| 1  | BAKORMA | 3         | 1            | (to be completed)                         | (to be completed) |
-| 2  | Mandiri | 4         | 0            | (to be completed)                         | (to be completed) |
-| 3  | pkm     | 4         | 1            | (to be completed)                         | (to be completed) |
-| 4  | Lainnya | 4         | not asked    | (to be completed)                         | (to be completed) |
-
-
-Expected output for each test (from the job sheet, example only): test 1 is documents incomplete with 1 document missing and no award funds; test 2 is not eligible because only 1st, 2nd, and 3rd place get funds; test 3 is eligible because the PKM proposal is approved; test 4 is not eligible because the activity type is not covered by the requirements.
+Test Results for Case Study 2 by <Wildan>
+[!OutputWildan](/OutputWildan.png)
