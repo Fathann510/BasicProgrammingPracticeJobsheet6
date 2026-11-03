@@ -71,9 +71,8 @@ Class       : TI-1I
 
 ### 2.2.2 Running Results / Output Screenshot
 
-[!READMEResult](/READMEResult.png)
+![READMEResult](/READMEResult.png)
 
-Repository link: (https://github.com/Fathann510/PracticumDasproo12)
 
 ---
 
@@ -133,7 +132,7 @@ public class CaseStudy112 {
 
 Example:
 
-[!CaseStudy1Result](/CaseStudy1Result.png)
+![CaseStudy1Result](/CaseStudy1Result.png)
 
 
 ---
@@ -200,7 +199,7 @@ public class CaseStudy212 {
 
 ### 2.4.2 Running Results / Output Screenshot
 
-[!CaseStudy2Result](/CaseStudy2Result.png)
+![CaseStudy2Result](/CaseStudy2Result.png)
 
 
 ---
@@ -223,13 +222,10 @@ Invited student:
 2. Open the classmate's repository page, click the green Code button, choose the HTTPS tab, and copy the URL. Then clone the repository like in Experiment 1.
 3. Run StudiKasus2 with at least 3 test cases. Write the results at the bottom of README.md in the format below, then Add and Commit and Push, for example with the message "Test results for SK2 by (name)".
 
-The job sheet gives a note: always Pull before starting work on a shared repository, and the owner should not edit README.md before pulling, so there is no conflict when two people change the same file.
-
-(To be completed - write the GitHub username of the classmate, who tested whose program, and the date.)
 
 ### 2.5.2 Running Results / Output Screenshot
 
-[!CommitWildan](/CommitWildan.png)
+![CommitWildan](/CommitWildan.png)
 
-Test Results for Case Study 2 by <Wildan>
-[!OutputWildan](/OutputWildan.png)
+Test Results for Case Study 2 by Wildan
+![OutputWildan](/OutputWildan.png)
