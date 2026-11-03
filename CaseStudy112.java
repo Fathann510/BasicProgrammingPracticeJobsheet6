@@ -4,6 +4,8 @@ public class CaseStudy112 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        System.out.println("--- Welcome to Senja Coffee Shop! ---");
+
         int pricePerCup = 18000;
         int totalCups, payment, totalPrice, discount, totalPayment, change, less;
         
