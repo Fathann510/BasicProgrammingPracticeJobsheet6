@@ -62,101 +62,78 @@ This experiment creates a repository on GitHub, copies it to the computer (clone
 
 README.md content:
 
-text
-Ini adalah repository pertama saya
-Nama : Wildan Arya Indradiansyah
-NIM : 264107020257
-Kelas : TI-1I
+This is my first repository
+Name        : Fathan Nur Hidayat
+Student ID  : 264107020084
+Class       : TI-1I 
 
 
-The job sheet gives a note for a push error. If Push fails with a Permission denied message or a 403 error, another GitHub account may still be logged in on the computer. The fix is to open Start, then Credential Manager, then Windows Credentials, remove git:https://github.com, and push again. (To be completed - write here if this error happened.)
 
 ### 2.2.2 Running Results / Output Screenshot
 
-> Insert the screenshots here: the repository creation page, the cloned folder in Visual Studio Code, the README.md file with status U, the commit, and the GitHub page showing README.md. (To be completed - no screenshots have been provided yet.)
+[!READMEResult](/READMEResult.png)
 
-Repository link: (To be completed - write the GitHub link of PraktikumDaspro30 here.)
+Repository link: (https://github.com/Fathann510/PracticumDasproo12)
 
 ---
 
 ## 2.3 Experiment 2: Case Study 1 - Basic Selection
 
-Kedai Kopi Senja sells Kopi Susu Gula Aren for Rp18,000 per cup. A purchase of at least Rp100,000 gets a 10% discount. The program reads the number of cups and the money paid, then calculates the total price, the discount, the total to pay, and the change. If the money is not enough, the program shows how much is still missing. The program follows the flowchart in the job sheet, so the variable names are the same as in the flowchart.
+Kedai Kopi Senja (Senja Coffee Shop) sells Kopi Susu Gula Aren (Palm Sugar Milk Coffee) for
+Rp18,000 per cup and gives a 10% discount on purchases of at least Rp100,000. The shop owner needs
+a simple cashier program to calculate the total payment and the change. Write a Java program based
+on the flowchart below
 
 ### 2.3.1 Java Program Code
-
-The file is StudiKasus130.java, inside the repository PraktikumDaspro30. The job sheet did not come with a finished code, so this code was written from the flowchart.
 
 ```java
 import java.util.Scanner;
 
-public class StudiKasus130 {
+public class CaseStudy112 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        int hargaPerCup = 18000;
-        int jumlahCup, uangBayar;
-        int totalHarga, diskon, totalBayar;
-        int kembalian, kurang;
+        System.out.println("--- Welcome to Senja Coffee Shop! ---");
 
-        System.out.print("Masukkan jumlah cup  : ");
-        jumlahCup = sc.nextInt();
-        System.out.print("Masukkan uang bayar  : ");
-        uangBayar = sc.nextInt();
+        int pricePerCup = 18000;
+        int totalCups, payment, totalPrice, discount, totalPayment, change, less;
+        
+        System.out.print("Enter the number of cups: ");
+        totalCups = input.nextInt();
+        System.out.print("Enter the payment amount: ");
+        payment = input.nextInt();
 
-        totalHarga = jumlahCup * hargaPerCup;
-        diskon = 0;
+        totalPrice = pricePerCup * totalCups;
+        discount = 0;
 
-        if (totalHarga >= 100000) {
-            diskon = totalHarga * 10 / 100;
+        if (totalPrice >= 100000) {
+            discount = ((int) (totalPrice * 0.1));
         }
 
-        totalBayar = totalHarga - diskon;
+        totalPayment = totalPrice - discount;
 
-        System.out.println("Total harga          : Rp " + totalHarga);
-        System.out.println("Diskon               : Rp " + diskon);
-        System.out.println("Total bayar          : Rp " + totalBayar);
+        System.out.println("Total Price: " + totalPrice);
+        System.out.println("Discount: " + discount);
+        System.out.println("Total Payment: " + totalPayment);
 
-        if (uangBayar >= totalBayar) {
-            kembalian = uangBayar - totalBayar;
-            System.out.println("Kembalian            : Rp " + kembalian);
+        if (payment >= totalPayment) {
+            change = payment - totalPrice;
+            System.out.println("Change: " + change);
         } else {
-            kurang = totalBayar - uangBayar;
-            System.out.println("Uang tidak cukup, kurang Rp " + kurang);
+            less = totalPayment - payment;
+            System.out.println("Insufficient payment. You need to pay: " + less);
         }
-        sc.close();
+        input.close();
     }
 }
+
 ```
-
-The program has two if statements. The first one checks whether totalHarga is at least 100000. If it is true, diskon becomes 10% of totalHarga. If it is false, diskon stays 0 from the line before. The second one is an if-else. It checks whether uangBayar is enough for totalBayar. If it is enough, the program shows kembalian. If not, the program shows kurang. The variable hargaPerCup is fixed at 18000, and the other variables get their values from the input or from calculations. All of them are int, because the prices are whole rupiah.
-
-For Git, the job sheet asks for at least 2 commits. The example messages in the job sheet are "SK1: input and variable declaration" for the first commit (after the input and variables are finished) and "SK1: discount and change logic" for the second commit (after the selection logic is finished). After that, the code is pushed. (To be completed - write the real commit messages and the GitHub link here.)
 
 ### 2.3.2 Running Results / Output Screenshot
 
-> Insert the screenshot of the program output here. (To be completed - no screenshot has been provided yet.)
+Example:
 
-Expected output (example only, taken from the job sheet; not yet confirmed by running the program). The number after the colon is the input:
-
-text
-Masukkan jumlah cup  : 3
-Masukkan uang bayar  : 50000
-Total harga          : Rp 54000
-Diskon               : Rp 0
-Total bayar          : Rp 54000
-Uang tidak cukup, kurang Rp 4000
-
-
-Expected output for a purchase with a discount (example only, calculated from the code; not yet confirmed by running the program). Six cups cost 6 x 18000 = 108000, which is at least 100000, so the discount is 10800:
-
-text
-Masukkan jumlah cup  : 6
-Masukkan uang bayar  : 100000
-Total harga          : Rp 108000
-Diskon               : Rp 10800
-Total bayar          : Rp 97200
-Kembalian            : Rp 2800
+[!CaseStudy1Result](/CaseStudy1Result.png)
 
 
 ---
@@ -167,115 +144,63 @@ The Student Affairs Division of Politeknik Negeri Malang gives award funds to st
 
 ### 2.4.1 Java Program Code
 
-The file is StudiKasus230.java, inside the same repository. The job sheet did not come with a finished code, so this code was written from the job sheet description.
-
 ```java
 import java.util.Scanner;
 
-public class StudiKasus230 {
+public class CaseStudy212 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        System.out.print("Nama mahasiswa : ");
-        String nama = sc.nextLine();
-        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : ");
-        String jenis = sc.nextLine();
+        System.out.print("Student Name : ");
+        String name = input.nextLine();
+        System.out.print("Event Type (BELMAWA/BAKORMA/MANDIRI/PKM/OTHERS) : ");
+        String eventType = input.nextLine();
 
-        if (jenis.equalsIgnoreCase("BELMAWA") || jenis.equalsIgnoreCase("BAKORMA")
-                || jenis.equalsIgnoreCase("MANDIRI")) {
-            // competition
-            System.out.print("Jumlah dokumen : ");
-            int jumlahDokumen = sc.nextInt();
-            System.out.print("Peringkat juara : ");
-            int peringkat = sc.nextInt();
+         if (eventType.equalsIgnoreCase("BELMAWA") || eventType.equalsIgnoreCase("BAKORMA") || eventType.equalsIgnoreCase("MANDIRI")) {
+            System.out.print("Number of Document : ");
+            int documentAmount = input.nextInt();
+            System.out.print("Rank : ");
+            int peringkat = input.nextInt();
 
-            if (jumlahDokumen < 4) {
-                int kurang = 4 - jumlahDokumen;
-                System.out.println("Status : Dokumen tidak lengkap (kurang " + kurang
-                        + " dokumen). Dana penghargaan tidak diberikan.");
+            if (documentAmount < 4) {
+                int kurang = 4 - documentAmount;
+                System.out.println("Status : Insufficient Document (Need more " + kurang + " documents). The award money is not provided.");
             } else {
                 if (peringkat >= 1 && peringkat <= 3) {
-                    System.out.println("Status : Berhak menerima dana penghargaan (juara "
-                            + peringkat + ").");
+                System.out.println("Status : Entitled to receive an award fund (Rank " + peringkat + ").");
                 } else {
-                    System.out.println("Status : Tidak berhak menerima dana penghargaan "
-                            + "(hanya untuk juara 1, 2, atau 3).");
+                System.out.println("Status : Not entitled to receive an award fund " + "(only for ranks 1, 2, or 3).");
                 }
             }
-        } else if (jenis.equalsIgnoreCase("PKM")) {
-            // student creativity program
-            System.out.print("Jumlah dokumen : ");
-            int jumlahDokumen = sc.nextInt();
-            System.out.print("Status pendanaan PKM (1 = disetujui, 0 = tidak) : ");
-            int statusPkm = sc.nextInt();
+        } else if (eventType.equalsIgnoreCase("PKM")) {
+            System.out.print("Number of Document : ");
+            int documentAmount = input.nextInt();
+            System.out.print("Funding Status PKM (1 = approved, 0 = not approved) : ");
+            int statusPkm = input.nextInt();
 
-            if (jumlahDokumen < 4) {
-                int kurang = 4 - jumlahDokumen;
-                System.out.println("Status : Dokumen tidak lengkap (kurang " + kurang
-                        + " dokumen). Dana penghargaan tidak diberikan.");
+            if (documentAmount < 4) {
+                int kurang = 4 - documentAmount;
+                System.out.println("Status : Insufficient Document (Need more " + kurang + " documents). The award money is not provided.");
             } else {
                 if (statusPkm == 1) {
-                    System.out.println("Status : Berhak menerima dana penghargaan "
-                            + "(proposal PKM disetujui didanai).");
+                    System.out.println("Status : Entitled to receive an award fund " + "(PKM proposal approved and funded).");
                 } else {
-                    System.out.println("Status : Tidak berhak menerima dana penghargaan "
-                            + "(proposal PKM tidak disetujui didanai).");
+                    System.out.println("Status : Not entitled to receive an award fund " + "(PKM proposal not approved or funded).");
                 }
             }
         } else {
-            // other activity
-            System.out.println("Status : Tidak berhak menerima dana penghargaan "
-                    + "(jenis kegiatan tidak termasuk dalam ketentuan).");
+            System.out.println("Status : Not entitled to receive an award fund " + "(event type not included in the regulations).");
         }
-        sc.close();
+        input.close();
+
     }
 }
+
 ```
-
-The first if checks whether the activity is a competition (BELMAWA, BAKORMA, or Mandiri). The method equalsIgnoreCase is used, so the input is not case-sensitive. The else if checks PKM, and the last else covers Other, for example Lainnya. This is level 1.
-
-Inside the competition branch and the PKM branch, the second level checks the number of documents. If jumlahDokumen is less than 4, the program counts the missing documents (4 - jumlahDokumen) and shows that the data is incomplete. If the documents are complete, the third level checks the real condition. For a competition, peringkat must be from 1 to 3. For PKM, statusPkm must be 1. So the deepest nesting is 3 levels, as the job sheet requires.
-
-The program only asks for the data that is needed. The rank is only asked for competitions, the funding status is only asked for PKM, and the Other branch does not ask for any more data. In the Other branch the number of documents is not asked, because documents only matter for the two types that can get funds.
-
-For Git, the job sheet asks for at least 2 commits. The example messages in the job sheet are "SK2: competition branch" for the first commit and "SK2: PKM and other branches" for the second commit. After that, the code is pushed. (To be completed - write the real commit messages and the GitHub link here.)
 
 ### 2.4.2 Running Results / Output Screenshot
 
-> Insert the screenshots of the test results here (one for each test case below). (To be completed - no screenshot has been provided yet.)
-
-Expected output for the example in the job sheet (example only; not yet confirmed by running the program):
-
-text
-Nama mahasiswa : Dori
-Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : bakorma
-Jumlah dokumen : 3
-Peringkat juara : 1
-Status : Dokumen tidak lengkap (kurang 1 dokumen). Dana penghargaan tidak diberikan.
-
-
-Expected output for the other test data in the job sheet (example only, calculated from the code; the sentences follow my code, so the wording is not exactly the same as in the job sheet):
-
-text
-Nama mahasiswa : (any name)
-Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : Mandiri
-Jumlah dokumen : 4
-Peringkat juara : 0
-Status : Tidak berhak menerima dana penghargaan (hanya untuk juara 1, 2, atau 3).
-
-
-text
-Nama mahasiswa : (any name)
-Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : pkm
-Jumlah dokumen : 4
-Status pendanaan PKM (1 = disetujui, 0 = tidak) : 1
-Status : Berhak menerima dana penghargaan (proposal PKM disetujui didanai).
-
-
-text
-Nama mahasiswa : (any name)
-Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : Lainnya
-Status : Tidak berhak menerima dana penghargaan (jenis kegiatan tidak termasuk dalam ketentuan).
+[!CaseStudy2Result](/CaseStudy2Result.png)
 
 
 ---
