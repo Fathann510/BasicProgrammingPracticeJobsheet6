@@ -4,7 +4,7 @@
 
 - Name: Fathan Nur Hidayat
 - Student ID (NIM): 264107020084
-- Class / No. Attendance : TI-1I / 30
+- Class / No. Attendance : TI-1I / 12
 
 ---
 
